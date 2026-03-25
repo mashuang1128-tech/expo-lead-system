@@ -65,6 +65,47 @@ select {
   padding: 28px 20px;
 }
 
+.landing-shell {
+  align-items: flex-start;
+}
+
+.landing-card {
+  width: min(100%, 1160px);
+}
+
+.landing-copy-block {
+  display: grid;
+  gap: 12px;
+}
+
+.landing-form-panel {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(15, 107, 120, 0.08);
+}
+
+.offer-list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.offer-list li::marker {
+  color: var(--primary);
+}
+
+.landing-note {
+  margin: 4px 0 0;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
 .eyebrow,
 .success-badge {
   display: inline-flex;
@@ -169,6 +210,10 @@ h1 {
   gap: 18px;
 }
 
+.lead-form-compact {
+  gap: 16px;
+}
+
 .field-group {
   display: grid;
   gap: 10px;
@@ -223,6 +268,20 @@ h1 {
   min-height: auto;
   margin: 0;
   accent-color: var(--primary);
+}
+
+.submit-hint {
+  margin-top: -2px;
+  color: var(--primary-deep);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-error {
+  margin: 0;
+  color: #b42318;
+  line-height: 1.6;
 }
 
 .success-card {
@@ -794,8 +853,19 @@ h1 {
   .highlight-item p,
   .success-panel p,
   .detail-item strong,
-  .created-at-text {
+  .created-at-text,
+  .landing-note {
     font-size: 0.95rem;
+  }
+
+  .offer-list {
+    gap: 6px;
+    padding-left: 18px;
+  }
+
+  .landing-form-panel {
+    margin-top: 20px;
+    padding: 14px;
   }
 
   .highlight-grid,
@@ -910,6 +980,20 @@ h1 {
   .success-card,
   .admin-card {
     padding: 40px;
+  }
+
+  .landing-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .landing-form-panel {
+    margin-top: 0;
+    padding: 22px;
+    position: sticky;
+    top: 24px;
   }
 
   .highlight-grid {

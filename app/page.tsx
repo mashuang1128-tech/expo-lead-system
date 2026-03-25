@@ -1,34 +1,27 @@
-import Link from "next/link";
+import LeadCaptureForm from "@/components/lead-capture-form";
 
 export default function HomePage() {
   return (
-    <main className="page-shell">
-      <section className="hero-card">
-        <span className="eyebrow">Surgical Energy Solutions</span>
-        <h1>Advanced Surgical Energy Solutions</h1>
-        <p className="hero-copy">
-          Leave your contact to receive product catalog and product information.
-        </p>
-
-        <div className="highlight-grid">
-          <article className="highlight-item">
-            <strong>Exhibition Ready</strong>
-            <p>Built for fast lead capture during busy trade shows and professional events.</p>
-          </article>
-          <article className="highlight-item">
-            <strong>Professional Positioning</strong>
-            <p>Clear product-oriented messaging that fits modern B2B device conversations.</p>
-          </article>
-          <article className="highlight-item">
-            <strong>Quick Follow-Up</strong>
-            <p>Collect buyer information now and support catalog delivery after the event.</p>
-          </article>
+    <main className="page-shell landing-shell">
+      <section className="hero-card landing-card">
+        <div className="landing-copy-block">
+          <span className="eyebrow">Exhibition Lead Capture</span>
+          <h1>Get Product Details &amp; Business Opportunity</h1>
+          <p className="hero-copy">
+            Leave your contact to receive:
+          </p>
+          <ul className="offer-list">
+            <li>Full product catalog (PDF)</li>
+            <li>Pricing &amp; cooperation model</li>
+            <li>One-on-one follow-up after the event</li>
+          </ul>
+          <p className="landing-note">
+            We will contact you shortly after the exhibition.
+          </p>
         </div>
 
-        <div className="hero-actions">
-          <Link className="button button-primary" href="/form">
-            Get Product Info
-          </Link>
+        <div className="landing-form-panel">
+          <LeadCaptureForm submitLabel="Submit Now" compact />
         </div>
       </section>
     </main>
