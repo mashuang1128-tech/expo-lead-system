@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   ADMIN_COOKIE_NAME,
@@ -19,7 +19,7 @@ function getCookieValue(name: string) {
   return cookie ? cookie.split("=")[1] : null;
 }
 
-export default function AdminLoginPage() {
+function AdminLoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [password, setPassword] = useState("");
@@ -104,7 +104,11 @@ export default function AdminLoginPage() {
           </div>
 
           <div className="form-actions">
-            <button className="button button-primary" type="submit" disabled={isSubmitting}>
+            <button
+              className="button button-primary"
+              type="submit"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Logging in..." : "Login"}
             </button>
           </div>
@@ -113,5 +117,13 @@ export default function AdminLoginPage() {
         </form>
       </section>
     </main>
+  );
+}
+
+export default function AdminLoginPage() {
+  return (
+    <Suspense fallback={<main className="page-shell">Loading...</main>}>
+      <AdminLoginContent />
+    </Suspense>
   );
 }
